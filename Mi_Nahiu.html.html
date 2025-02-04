@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín ❤</title>
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: all 1s ease-in-out;
+        }
+        #contenedor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 25px;
+        }
+        .boton {
+            background-color: #ff4d4d;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .boton:hover {
+            background-color: #ff3333;
+        }
+        #mensaje-final {
+            display: none;
+            font-size: 30px;
+            max-width: 80%;
+            text-align: center;
+            opacity: 0;
+            animation: aparecer 1.5s ease-in-out forwards;
+        }
+        .flor {
+            display: none;
+            width: 250px;
+            margin-top: 20px;
+            animation: crecer 2s ease-in-out forwards;
+        }
+        @keyframes aparecer {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes crecer {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="contenedor">
+        <h1 id="titulo">TE AMO MUCHO</h1>
+        <h2 id="pregunta">Gordita, ¿Querés ser mi San Valentín?</h2>
+        <button class="boton" onclick="mostrarMensaje()">Sí (no tenés otra opción)</button>
+    </div>
+
+    <div id="mensaje-final">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Rosa_Red_Chateau01.jpg" class="flor">
+        <p>Gracias por ser mi San Valentín otro año más.  
+        Estoy muy contento de que seas vos nuevamente este año  
+        y quiero que todos los años sean así.  
+        Estoy perdidamente enamorado de vos. Te amo ❤</p>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            // Ocultar el contenido inicial
+            document.getElementById("contenedor").style.display = "none";
+
+            // Cambiar el fondo y mostrar el mensaje
+            document.body.style.backgroundColor = "#ff4d4d"; // Fondo rojo romántico
+            document.getElementById("mensaje-final").style.display = "block";
+            document.querySelector(".flor").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
